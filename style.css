@@ -1,0 +1,26 @@
+/* Party Proof site. Same palette as the app: cream ground, plum ink, bright party fills.
+   Colored text uses the deep shades only (contrast 4.6:1 or more). No web fonts are loaded,
+   so visiting the site sends nothing to any third party. */
+:root{--bg:#FFF7F0;--card:#fff;--ink:#2A1640;--muted:#5E4A73;--line:#EADCF2;--pink:#FF3D8B;--pinkDeep:#D81B6A;--sun:#FFC93C;--teal:#1FC8B4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 20px 48px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+nav a{padding:8px 16px;border-radius:999px;background:var(--card);border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600}
+nav a[aria-current=page]{background:var(--pink)}
+h1,h2,.logo{font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold",-apple-system,sans-serif;font-weight:800;line-height:1.15}
+h1{font-size:40px;margin:8px 0 4px}
+.logo{font-size:56px;color:var(--pinkDeep);margin:8px 0 0;transform:rotate(-2deg);display:inline-block}
+h2{font-size:24px;margin:32px 0 8px}
+a{color:var(--pinkDeep)}
+.muted{color:var(--muted)}
+.card{background:var(--card);border-radius:22px;padding:18px 22px;margin:18px 0;box-shadow:0 4px 12px rgba(42,22,64,.12)}
+.tilt{transform:rotate(-1deg)}
+.stickers{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.sticker{padding:14px 18px;border-radius:18px;font-weight:700;box-shadow:0 4px 10px rgba(42,22,64,.14)}
+.sticker:nth-child(odd){transform:rotate(-2deg)}.sticker:nth-child(even){transform:rotate(2deg)}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:800;text-decoration:none;font-size:19px;box-shadow:0 5px 12px rgba(255,61,139,.35)}
+.btn.secondary{background:var(--card);border:2px solid var(--ink);box-shadow:none}
+.code{font:700 28px/1 ui-monospace,Menlo,monospace;letter-spacing:4px}
+footer{margin-top:40px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.tilt,.sticker,.logo{transform:none!important}}

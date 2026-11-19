@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join a Party Proof game</title><meta name="apple-itunes-app" content="app-id=6836597869"><meta name="robots" content="noindex"><link rel="stylesheet" href="style.css"></head><body><main>
+<p class="logo">Party Proof</p>
+<h1>You're invited!</h1>
+<div class="card tilt" id="box">
+<p>Game code</p>
+<p class="code" id="code">------</p>
+<p><a class="btn" id="open" href="partyproof://join">Open in Party Proof</a></p>
+<p><a class="btn secondary" href="https://apps.apple.com/app/id6836597869">Get it on the App Store</a></p>
+</div>
+<p class="muted">Button didn't open the app? If you're inside another app (like Facebook or Instagram), use its menu to open this page in Safari, then tap Open in Party Proof.</p>
+<footer>© 2026 Thomas Innovative Technologies.</footer>
+</main>
+<script>
+// Reads only ?code= (6 letters/numbers) and builds the app link. Nothing is sent anywhere.
+(function(){var c=(new URLSearchParams(location.search).get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,6);
+if(c){document.getElementById('code').textContent=c;document.getElementById('open').href='partyproof://join?code='+c;}
+else{document.getElementById('code').textContent='No code';}})();
+</script>
+</body></html>
