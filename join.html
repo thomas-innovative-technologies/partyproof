@@ -11,11 +11,13 @@
 <footer>© 2026 Thomas Innovative Technologies.</footer>
 </main>
 <script>
-// Reads only ?code= (6 letters/numbers) and ?h= (the host's random player id) and builds the
-// app link. Nothing is sent anywhere.
+// Reads only ?code= (6 letters/numbers), ?h= (the host's random player id) and, for weekend
+// games, #k= (the game's encryption key, after '#' so it never reaches this website) and builds
+// the app link. Nothing is sent anywhere.
 (function(){var c=(new URLSearchParams(location.search).get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,6);
 var h=(new URLSearchParams(location.search).get('h')||'').toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,16);
-if(c){document.getElementById('code').textContent=c;document.getElementById('open').href='partyproof://join?code='+c+(h?'&h='+h:'');}
+var k=(new URLSearchParams(location.hash.slice(1)).get('k')||'').replace(/[^A-Za-z0-9_-]/g,'').slice(0,64);
+if(c){document.getElementById('code').textContent=c;document.getElementById('open').href='partyproof://join?code='+c+(h?'&h='+h:'')+(k?'&k='+k:'');}
 else{document.getElementById('code').textContent='No code';}})();
 </script>
 </body></html>
